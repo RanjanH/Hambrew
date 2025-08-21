@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Sheet</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Federant&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap" rel="stylesheet">
+    <style>
+        .font-federant {
+            font-family: 'Federant', serif;
+        }
+        .font-rubik{
+            font-family: 'Rubik', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#0F1826] bg-[url('Images/sheet-bg.jpg')] bg-cover bg-center bg-fixed">
+    <!-- Nav Bar -->
+    <div id = "header" class="w-full h-[80px] z-[-2]" style="background: #141E30;
+        background: linear-gradient(0deg,rgba(20, 30, 48, 1) 43%, rgba(36, 59, 85, 1) 99%);">
+        <div id="navbar" class="w-full h-[80px] px-[10%] py-[10px] pt-[15px] fixed top-0 left-0   z-[1]">
+            <nav class="flex items-center justify-between flex-wrap">
+                <div id="logo" class = "flex items-center justify-between flex-wrap">
+                    <a href = "#">
+                        <img src = "images/nobg-logo.png" class = "w-[200px] inline-block" alt="Hambrew Logo">
+                    </a>
+                </div>
+        
+                <div id = "sideMenu" class = "nav_items flex">
+                    <a href = "#" class="text-white no-underline text-[30px] ml-[50px] font-federant relative">About</a>
+                    <a href = "#" class="text-white no-underline text-[30px] ml-[50px] font-federant relative">Characters</a>
+                    <a href = "#" class="text-white no-underline text-[30px] ml-[50px] font-federant relative">Campaigns</a>
+                    <a href = "#" class="text-white no-underline text-[30px] ml-[50px] font-federant relative">Profile</a>
+                    <i class="fas fa-times" onclick="closeMenu()"></i>
+                </div>
+                <i class="fas fa-bars" onclick="openMenu()"></i>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Character Sheet -->
+    <div id="sheet" class=" bg-cover bg-center px-[250px] pt-[50px]">
+        <!-- Basic details and HP container -->
+        <div id="container" class="relative flex flex-wrap items-center justify-between">
+            <!-- Avatar -->
+            <div id="avatar" class="absolute top-0 left-5 h-[100px] w-[100px] 
+                bg-[#201c1c] border-[3px] border-[#a72121] rounded-md z-10">
+                <img src="Images/Drasopp.jpg" alt="Avatar" class="w-full h-full object-cover">
+                <!-- Level -->
+                <div id="level" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 
+                    w-[30px] h-[30px] bg-[#a72121] rotate-45 flex items-center justify-center -mb-[25px]">
+                    <span class="-rotate-45 text-black font-bold text-lg">1</span>
+                </div>
+            </div>
+            <!-- Basic details like name, species, archetype name, profession name -->
+            <div id="basic-info" class="bg-[#201c1c] h-[200px] w-[calc(50%-20px)] p-[10px] m-[10px] mt-[30px]
+                border-[2px] border-[#545353] rounded-lg flex items-center">
+                <button id="level-up" class=""></button>
+                <!-- Text details -->
+                <div id="data" class="flex flex-col ml-28 -mt-[8px] justify-center h-full text-white text-sm space-y-[8px] font-rubik">
+                    <span class="text-2xl font-[700]">Drasopp Vex</span>
+                    <span>Species - Human</span>
+                    <span>Profession - Spy</span>
+                    <span>Archetype - Sniperwright</span>
+                    <span>Prime Stat - Wit</span>
+                    <span>Fighting Style - Kno</span>
+                </div>
+                <!-- Momentum and Initiative -->
+                <div id="mom-ini" class="flex flex-col ml-[20px] justify-center h-full text-white 
+                    text-[15px] pt-[120px] pl-[40px]">
+                    <span class="text-lg font-rubik mb-[6px]">Momentum - 0</span>
+                    <div id="momentum-inc" class="flex space-x-2 mb-4">
+                        <button class="w-[calc(50%-5px)] bg-transparent text-white font-semibold 
+                            font-rubik py-2 rounded-md border-[1px] border-[#D3D3D3]">- M</button>
+                        <button class="w-[calc(50%-5px)] bg-transparent text-white font-semibold 
+                            font-rubik py-2 rounded-md border-[1px] border-[#D3D3D3]">+ M</button>
+                    </div>
+                    <!-- <button id="ini" class="w-full bg-[#a72121] text-white font-rubik font-semibold py-2 rounded-md">Initiative +</button> -->
+                </div>
+            </div>
+            <!-- HP -->
+            <div id="hp" class="bg-[#201c1c] h-[200px] w-[calc(50%-20px)] m-[10px] mt-[30px] border-[2px]
+                border-[#545353] rounded-lg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
